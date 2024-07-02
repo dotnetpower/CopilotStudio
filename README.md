@@ -5,6 +5,9 @@
 
 https://copilotstudio.microsoft.com 
 
+
+
+
 ## SharePoint 에 등록된 문서를 Copilot 에서 검색 하기 위한 절차
 
 1. Copilot Studio 에 접속 하여 `만들기` 를 통해 `신규 Copilot` 선택
@@ -14,7 +17,6 @@ https://copilotstudio.microsoft.com
 ![](images/2024-06-26-17-52-17.png)
 - 언어 설정을 한국어로 설정하는 경우 `클래식`모드로 동작하므로 생성형 AI 의 응답방식은 사용자가 `토픽`에 입력한 예시문을 바탕으로 `토픽`과 `작업`을 선택.
 - 영어로 설정하면 생성형 AI 의 `생성형(프리뷰)`기능이 활성화 되고 `토픽`과 `작업`에 대해 요약(Description) 을 LLM 이 판단하여 선택하는 차이가 있음.
-#- 단, SharePoint 문서 검색을 위해서는 참조 자료
 
 3. 예제 파일인 [풍력발전_오해와_진실.pdf](files/풍력발전_오해와_진실.pdf) 문서 내용중 
 첫 페이지의 `풍력발전의 역사`에 대해 문서를 업로드 하기전 상태에서 코파일럿에게 질문
@@ -83,7 +85,7 @@ https://copilotstudio.microsoft.com
     ![alt text](images/image.png)
 
     3. `API 표시` 메뉴에서 `범위 추가` 클릭 후 `저장 후 계속` 클릭
-    
+
     ![](images/2024-06-26-18-45-25.png)
     ![](images/2024-06-26-18-46-05.png)
 
@@ -129,3 +131,62 @@ https://copilotstudio.microsoft.com
 11. `풍력발전기로 한 해 동안 몇 가구에 전기를 공급할 수 있어?` 질문을 통해 문서에서 검색된 결과가 노출됨을 확인
 
 ![](images/2024-06-26-19-05-55.png)
+
+12. `게시`를 통해 코파일럿 공유
+
+
+## SharePoint 목록을 조회하기 위한 절차(Power Automate)
+
+1. 목록이 검색을 위해서 Power Automate 로 호출을 하기위해 다음과 같이 `자산관리` 목록에 데이터가 있다고 가정하고
+
+    ![](images/2024-07-02-19-31-11.png)
+
+2. 토픽추가에서 트리거 구문을 지정(생성형 AI 인 경우 능동형으로 작성)
+
+    ![](images/2024-07-02-19-32-29.png)
+
+3. 작업호출-흐름만들기 선택
+
+    ![](images/2024-07-02-19-33-06.png)
+
+4. Power Automate 화면의 Copilot 프롬프트에 다음과 같이 입력하여 SharePoint 목록 조회하는 단계를 추가
+
+    ![](images/2024-07-02-19-37-28.png)
+    ```
+    get items from https://mngenvmcap132261.sharepoint.com/sites/TargetDLSite/Lists/List/AllItems.aspx
+    ```
+
+5. Sharepoint 목록 확인 - 목록 이름으로 List Name 업데이트 및 Top count 지정
+
+    ![](images/2024-07-02-19-48-07.png)
+    
+
+6. 변수를 초기화
+
+    ![](images/2024-07-02-19-41-14.png)
+
+7. Apply to Each 추가 후 Append to string variable 에 Model 설정
+
+    ![](images/2024-07-02-19-44-52.png)
+
+8. 응답을 위한 출력변수 지정
+
+    ![](images/2024-07-02-19-46-57.png)
+
+9. Publish 후 Test 및 `Respond to Copilot` 을 클릭하여 테스트 결과 확인
+
+    ![](images/2024-07-02-19-49-54.png)
+
+10. Copilot Studio 에서 잠시 기다린 후 작업호출을 클릭하면 추가된 Flow 보이므로 클릭하여 추가
+
+    ![](images/2024-07-02-19-51-04.png)
+
+11. 마지막 단계에서 `메시지 보내기` 선택하여 변수를 다음처럼 설정
+
+    ![](images/2024-07-02-19-52-21.png)
+
+12. 다음처럼 연결 설정이 필요한 경우 연결을 클릭 하여 연결관리에서 연결해 주면 됨. 
+
+    ![](images/2024-07-02-19-53-14.png)
+    ![](images/2024-07-02-19-55-20.png)
+    
