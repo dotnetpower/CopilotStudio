@@ -4,9 +4,9 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
 
 ---
 
-## 목차
+## 📑 목차
 
-### 계획 단계
+### 📋 계획 단계
 1. [**목표 정의 및 범위 설정**](go-live/01-goal-definition.md)
    - 비즈니스 목표 설정
    - 성공 지표 (KPI) 정의
@@ -14,7 +14,7 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
 
 2. [**품질 관리**](go-live/02-quality-management.md)
    - 응답 품질 테스트
-   - 사용자 경험 설계
+   - 사용자 경험 설계 (CUX)
    - 오류 처리 및 에스컬레이션
 
 3. [**보안 및 규정 준수**](go-live/03-security-compliance.md)
@@ -22,7 +22,7 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
    - 개인정보 보호 (GDPR, CCPA)
    - 감사 로그 및 컴플라이언스
 
-### 기술 준비
+### ⚙️ 기술 준비
 4. [**성능 및 확장성**](go-live/04-performance-scalability.md)
    - 성능 최적화 전략
    - 부하 테스트
@@ -38,13 +38,13 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
    - 문서 구조화 및 검색 최적화
    - 학습 및 성능 튜닝
 
-### 테스트 및 검증
+### 🧪 테스트 및 검증
 7. [**테스트 계획**](go-live/07-testing-plan.md)
    - 기능/통합/부하/보안 테스트
    - 테스트 시나리오 및 케이스
    - 사용자 시나리오 기반 테스트
 
-### 배포 준비
+### 🚀 배포 준비
 8. [**배포 전 체크리스트**](go-live/08-deployment-checklist.md)
    - 기술적 준비사항
    - 비즈니스 준비사항
@@ -62,29 +62,33 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
 
 ---
 
-## 빠른 시작
+## 🚀 빠른 시작
 
 프로덕션 배포를 준비 중이라면 다음 순서로 진행하세요:
 
-1. **계획 단계 (1-3주)**
-   - [목표 정의](go-live/01-goal-definition.md)부터 시작
-   - [보안 및 규정 준수](go-live/03-security-compliance.md) 요구사항 파악
+### 1️⃣ 계획 단계 (1-3주)
+- [목표 정의](go-live/01-goal-definition.md)부터 시작
+- [보안 및 규정 준수](go-live/03-security-compliance.md) 요구사항 파악
+- [품질 관리](go-live/02-quality-management.md) 기준 설정
 
-2. **기술 준비 (2-4주)**
-   - [성능 및 확장성](go-live/04-performance-scalability.md) 계획 수립
-   - [모니터링](go-live/05-monitoring-maintenance.md) 인프라 구축
+### 2️⃣ 기술 준비 (2-4주)
+- [성능 및 확장성](go-live/04-performance-scalability.md) 계획 수립
+- [모니터링](go-live/05-monitoring-maintenance.md) 인프라 구축
+- [지식 관리](go-live/06-knowledge-management.md) 시스템 구성
 
-3. **테스트 (1-2주)**
-   - [테스트 계획](go-live/07-testing-plan.md) 실행
-   - [품질 관리](go-live/02-quality-management.md) 기준 충족 확인
+### 3️⃣ 테스트 (1-2주)
+- [테스트 계획](go-live/07-testing-plan.md) 실행
+- 품질 관리 기준 충족 확인
+- 사용자 시나리오 기반 검증
 
-4. **배포 (1주)**
-   - [배포 전 체크리스트](go-live/08-deployment-checklist.md) 검증
-   - [롤백 계획](go-live/09-rollback-plan.md) 준비 완료
+### 4️⃣ 배포 (1주)
+- [배포 전 체크리스트](go-live/08-deployment-checklist.md) 검증
+- [롤백 계획](go-live/09-rollback-plan.md) 준비 완료
+- [문서화](go-live/10-documentation.md) 최종 점검
 
 ---
 
-## 참고 자료
+## 📚 참고 자료
 
 - [Copilot Studio Best Practices](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/guidance/best-practices)
 - [Azure Well-Architected Framework](https://learn.microsoft.com/ko-kr/azure/well-architected/)
@@ -92,9 +96,14 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
 
 ---
 
-[← 메인으로 돌아가기](../README.md)
+**문서 정보**
+- **버전**: 2.0.0
+- **최종 업데이트**: 2024-11-27
+- **다음 검토**: 2025-02-27
 
-### 1. 명확한 목표 정의
+---
+
+[← 메인으로 돌아가기](../README.md)
 
 #### 1.1 비즈니스 목표
 에이전트가 해결해야 할 구체적인 비즈니스 문제를 명확히 정의합니다.

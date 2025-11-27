@@ -103,6 +103,269 @@
 
 ## 2.2 사용자 경험
 
+### Conversation Start (대화 시작 CUX)
+
+대화 시작 시 사용자에게 명확한 기대치를 설정하고 좋은 첫인상을 제공합니다.
+
+**CUX 핵심 원칙:**
+
+**1. 환영 메시지 (Welcome Message)**
+
+좋은 환영 메시지는 다음을 포함해야 합니다:
+
+```yaml
+# Conversation Start 토픽 예시
+- kind: SendMessage
+  id: welcomeMessage
+  message: |
+    안녕하세요! 👋 저는 HR 도우미 Copilot입니다.
+    
+    제가 도와드릴 수 있는 것들:
+    ✅ 휴가/연차 신청 방법
+    ✅ 복리후생 정책 안내
+    ✅ 급여 관련 문의 연결
+    ✅ 회사 규정 및 정책 검색
+    
+    무엇을 도와드릴까요?
+```
+
+**환영 메시지 체크리스트:**
+- [ ] 봇의 이름/역할 명확히 소개
+- [ ] 할 수 있는 것 구체적으로 나열 (3-5개)
+- [ ] 할 수 없는 것 명시 (선택적)
+- [ ] 친근하고 전문적인 톤 유지
+- [ ] 명확한 행동 유도 (Call-to-Action)
+
+**2. 페르소나 설정**
+
+일관된 대화 스타일과 톤을 유지합니다:
+
+```yaml
+additionalInstructions: |
+  # 페르소나
+  - 당신은 친절하고 전문적인 HR 도우미입니다
+  - 존댓말을 사용하되 격식을 차리지 않고 친근하게 대화합니다
+  - 이모지를 적절히 사용하여 친근감을 높입니다 (남용하지 않음)
+  
+  # 어조
+  - 긍정적이고 도움이 되는 태도
+  - 명확하고 간결한 표현
+  - 전문 용어는 쉽게 풀어서 설명
+  
+  # 제약사항
+  - 개인의 급여 정보는 직접 제공하지 않음
+  - 법적 자문은 제공하지 않음
+  - 불확실한 정보는 추측하지 않음
+```
+
+**3. 컨텍스트 수집**
+
+초기 대화에서 필요한 정보를 자연스럽게 수집합니다:
+
+```yaml
+# 사용자 인증 확인
+- kind: ConditionGroup
+  condition: System.User.IsAuthenticated = false
+  actions:
+    - kind: SendMessage
+      message: |
+        더 정확한 도움을 드리기 위해 로그인이 필요합니다.
+        [로그인하기] 버튼을 클릭해 주세요.
+
+# 부서 정보 확인 (필요시)
+- kind: Question
+  id: getDepartment
+  condition: IsBlank(Global.UserDepartment)
+  prompt: "어느 부서에 소속되어 계신가요?"
+  interactionType: Choice
+  choices:
+    - "영업"
+    - "마케팅"
+    - "개발"
+    - "인사"
+    - "기타"
+```
+
+**4. 빠른 액션 제공**
+
+자주 사용되는 기능에 빠르게 접근할 수 있도록 합니다:
+
+```yaml
+- kind: SendMessage
+  id: quickActions
+  message: |
+    빠른 메뉴를 선택하시거나, 자유롭게 질문해 주세요:
+  
+- kind: Question
+  id: mainMenu
+  interactionType: Choice
+  prompt: "원하시는 항목을 선택해 주세요"
+  choices:
+    - value: "vacation"
+      display: "🏖️ 휴가 신청"
+    - value: "benefits"
+      display: "💰 복리후생 안내"
+    - value: "policy"
+      display: "📋 회사 규정 검색"
+    - value: "support"
+      display: "🎫 지원 요청"
+    - value: "other"
+      display: "💬 직접 질문하기"
+```
+
+**5. 프로그레시브 디스클로저 (Progressive Disclosure)**
+
+모든 정보를 한 번에 보여주지 않고 단계적으로 공개합니다:
+
+```yaml
+# 나쁜 예 ❌
+message: |
+  휴가 신청은 다음 절차를 따릅니다:
+  1. 인사포털 로그인
+  2. 휴가 메뉴 선택
+  3. 휴가 유형 선택
+  4. 날짜 입력
+  5. 사유 입력
+  6. 상사 승인자 선택
+  7. 제출 버튼 클릭
+  8. 이메일 확인
+  [상세 내용 10줄 이어짐...]
+
+# 좋은 예 ✅
+message: |
+  휴가 신청은 3단계로 간단합니다:
+  
+  1️⃣ 인사포털 접속
+  2️⃣ 휴가 신청 메뉴
+  3️⃣ 정보 입력 후 제출
+  
+  각 단계별 상세 안내가 필요하신가요?
+  
+  [단계별 보기] [바로 신청하기] [동영상 보기]
+```
+
+**6. 오류 예방 및 복구**
+
+사용자가 잘못된 경로로 가지 않도록 안내합니다:
+
+```yaml
+# 명확하지 않은 입력 처리
+- kind: ConditionGroup
+  condition: Topic.Intent = "Unknown"
+  actions:
+    - kind: SendMessage
+      message: |
+        잘 이해하지 못했습니다. 다시 한번 말씀해 주시겠어요?
+        
+        이런 질문들을 해보세요:
+        • "휴가 신청 방법"
+        • "연차 잔여일수 확인"
+        • "복리후생 제도"
+        
+        또는 아래 메뉴에서 선택해 주세요:
+        [메뉴 보기]
+
+# 재시작 옵션 항상 제공
+- kind: SendMessage
+  message: |
+    처음부터 다시 시작하려면 "다시 시작" 또는 "처음으로"를 입력하세요.
+```
+
+**7. 진행 상황 표시**
+
+여러 단계로 이루어진 프로세스의 경우 진행 상황을 표시합니다:
+
+```yaml
+- kind: SendMessage
+  message: |
+    📍 휴가 신청 (1/3단계)
+    
+    휴가 유형을 선택해 주세요:
+    • 연차
+    • 병가
+    • 경조사 휴가
+
+- kind: SendMessage
+  message: |
+    📍 휴가 신청 (2/3단계)
+    
+    날짜를 선택해 주세요...
+
+- kind: SendMessage
+  message: |
+    ✅ 완료!
+    
+    휴가 신청이 제출되었습니다.
+    승인자에게 알림이 전송되었습니다.
+```
+
+**8. 피드백 및 개선**
+
+대화 종료 시 피드백을 수집합니다:
+
+```yaml
+# Conversation End
+- kind: SendMessage
+  message: |
+    도움이 되셨나요?
+
+- kind: Question
+  id: satisfaction
+  interactionType: Choice
+  prompt: "오늘 경험을 평가해 주세요"
+  choices:
+    - value: 5
+      display: "⭐⭐⭐⭐⭐ 매우 만족"
+    - value: 4
+      display: "⭐⭐⭐⭐ 만족"
+    - value: 3
+      display: "⭐⭐⭐ 보통"
+    - value: 2
+      display: "⭐⭐ 불만족"
+    - value: 1
+      display: "⭐ 매우 불만족"
+
+- kind: ConditionGroup
+  condition: Topic.satisfaction <= 3
+  actions:
+    - kind: Question
+      id: feedbackComment
+      prompt: "어떤 점이 개선되었으면 좋을까요?"
+      interactionType: TextInput
+```
+
+**CUX Best Practices 체크리스트:**
+
+**대화 시작 (Conversation Start)**
+- [ ] 명확한 환영 메시지
+- [ ] 봇의 역할과 기능 소개
+- [ ] 빠른 액션 버튼 제공
+- [ ] 자연스러운 첫 질문 유도
+
+**대화 중 (During Conversation)**
+- [ ] 짧고 명확한 응답 (2-3문장)
+- [ ] 진행 상황 표시
+- [ ] 항상 다음 단계 제시
+- [ ] 에스컬레이션 경로 명확
+
+**대화 종료 (Conversation End)**
+- [ ] 요약 제공
+- [ ] 피드백 수집
+- [ ] 추가 도움 제안
+- [ ] 명확한 종료 메시지
+
+**에러 처리**
+- [ ] 친근한 에러 메시지
+- [ ] 대안 제시
+- [ ] 쉬운 복구 방법
+- [ ] 사람 지원으로 에스컬레이션
+
+**접근성**
+- [ ] 명확한 언어 사용
+- [ ] 이모지 적절히 활용
+- [ ] 버튼과 텍스트 입력 모두 지원
+- [ ] 스크린 리더 호환
+
 ### 자연스러운 대화
 
 대화 흐름이 자연스럽고 이해하기 쉬운지 평가합니다.
