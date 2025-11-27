@@ -13,14 +13,15 @@ https://copilotstudio.microsoft.com
 
 [Open AI Tokenizer](https://platform.openai.com/tokenizer): 토큰 수 계산
 
-## 예제 목록
-| 제목 | 내용 |
+## 가이드 문서
+
+| 제목 | 설명 |
 | --- | --- |
-| [SharePoint 에 등록된 문서를 Copilot 에서 검색](#sharepoint-에-등록된-문서를-copilot-에서-검색-하기-위한-절차) | 참조자료에 SharePoint 의 문서를 추가하고 `앱 등록`에서 접근 권한 구성 예제 |
-| [SharePoint 목록 조회](#sharepoint-목록을-조회하기-위한-절차power-automate) | SharePoint 목록은 Copilot Studio 기본 동작에 따라 조회가 되지 않으므로 PowerAutomate Cloud Flow 를 이용하여 목록 조회 예제 |
-| [SharePoint 목록 조회(Dataverse Table)](#sharepoint-목록을-조회하기-위한-절차dataverse-table) | SharePoint 목록을 Dataverse Table 로 변환하여 `선택한 환경에서 행 나열` 커넥터를 이용해 조회 화는 예제 |
-| [Azure AI Search를 이용한 벡터검색](#Azure-AI-Search) | Azure 스토리지 계정에 업로드한 문서 파일을 Vector 검색이 가능하도록 구성하는 방법 | 
-| [모니터링을 위한 APM 설정 방법(Application Insights)](#모니터링을-위한-apm-설정-방법application-insights) | Application Insights로 대화이력 추적 방법 |
+| [SharePoint 문서 검색](docs/sharepoint-document-search.md) | SharePoint에 등록된 문서를 Copilot에서 검색하기 위한 앱 등록 및 권한 구성 |
+| [SharePoint 목록 조회](docs/sharepoint-list-query.md) | Power Automate 또는 Dataverse Table을 이용한 SharePoint 목록 조회 방법 |
+| [Azure AI Search](docs/azure-ai-search.md) | Azure AI Search를 이용한 벡터 검색 구성 방법 |
+| [모니터링 설정](docs/monitoring-application-insights.md) | Application Insights를 통한 대화 이력 추적 및 모니터링 |
+| [Go-Live 고려 사항](docs/go-live-considerations.md) | 프로덕션 배포 전 평가 항목 및 Best Practices |
 
 
 
