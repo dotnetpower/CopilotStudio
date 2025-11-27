@@ -21,7 +21,7 @@ https://copilotstudio.microsoft.com
 | [SharePoint 목록 조회](docs/sharepoint-list-query.md) | Power Automate 또는 Dataverse Table을 이용한 SharePoint 목록 조회 방법 |
 | [Azure AI Search](docs/azure-ai-search.md) | Azure AI Search를 이용한 벡터 검색 구성 방법 |
 | [모니터링 설정](docs/monitoring-application-insights.md) | Application Insights를 통한 대화 이력 추적 및 모니터링 |
-| [Go-Live 고려 사항](docs/go-live-considerations.md) | 프로덕션 배포 전 평가 항목 및 Best Practices |
+| [**Go-Live 고려 사항**](docs/go-live-considerations.md) | **프로덕션 배포 전 평가 항목 및 Best Practices (10단계 가이드)** |
 
 
 
