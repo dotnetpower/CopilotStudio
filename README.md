@@ -1,5 +1,7 @@
 # Copilot Studio 가이드 문서
 
+🌐 **[문서 사이트 바로가기](https://dotnetpower.github.io/CopilotStudio/)**
+
 Copilot Studio를 이용한 AI 에이전트 구축 및 운영을 위한 종합 가이드입니다.
 
 ## 시작하기
