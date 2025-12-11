@@ -1,8 +1,12 @@
+---
+sidebar_position: 4
+title: 4. 성능 및 확장성
+description: 성능 최적화 전략, 부하 테스트, 용량 계획 및 비용 최적화 방법을 안내합니다.
+---
+
 # 4. 성능 및 확장성
 
 > **Go-Live 고려 사항** > 성능 및 확장성
-
----
 
 ## 📋 목차
 
@@ -158,13 +162,13 @@ Azure:
 
 성능 및 확장성 계획을 수립했다면, 모니터링 및 유지보수 체계를 구축하세요:
 
-➡️ **다음**: [모니터링 및 유지보수](05-monitoring-maintenance.md) - 실시간 모니터링 및 개선
+➡️ **다음**: [모니터링 및 유지보수](monitoring-maintenance.md) - 실시간 모니터링 및 개선
 
 ---
 
 ## 네비게이션
 
-| [← 이전: 보안 및 규정 준수](03-security-compliance.md) | [📚 목차로](../go-live-considerations.md) | [다음: 모니터링 및 유지보수 →](05-monitoring-maintenance.md) |
+| [← 이전: 보안 및 규정 준수](security-compliance.md) | [📚 목차로](../go-live-considerations.md) | [다음: 모니터링 및 유지보수 →](monitoring-maintenance.md) |
 |---|---|---|
 
 ---

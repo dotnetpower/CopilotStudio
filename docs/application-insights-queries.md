@@ -1,8 +1,12 @@
+---
+sidebar_position: 6
+title: Application Insights 쿼리 가이드
+description: Copilot Studio의 대화 로그 및 성능 데이터를 Application Insights에서 조회하는 KQL(Kusto Query Language) 쿼리 예시 모음입니다.
+---
+
 # Application Insights 쿼리 가이드
 
 Copilot Studio의 대화 로그 및 성능 데이터를 Application Insights에서 조회하는 KQL(Kusto Query Language) 쿼리 예시 모음입니다.
-
----
 
 ## 📋 목차
 

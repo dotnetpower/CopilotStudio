@@ -1,3 +1,9 @@
+---
+sidebar_position: 9
+title: 9. 롤백 계획
+description: 롤백 시나리오 정의, 롤백 절차 및 스크립트, 사후 검증 방법을 안내합니다.
+---
+
 # 9. 롤백 계획
 
 > **Go-Live 고려 사항** > 롤백 계획
@@ -108,5 +114,5 @@ git tag -a "v1.2.0-prod" -m "Production deployment"
 
 ## 네비게이션
 
-| [← 이전: 배포 전 체크리스트](08-deployment-checklist.md) | [📚 목차로](../go-live-considerations.md) | [다음: 문서화 →](10-documentation.md) |
+| [← 이전: 배포 전 체크리스트](deployment-checklist.md) | [📚 목차로](../go-live-considerations.md) | [다음: 문서화 →](documentation.md) |
 |---|---|---|

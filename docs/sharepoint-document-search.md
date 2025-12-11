@@ -1,3 +1,9 @@
+---
+sidebar_position: 1
+title: SharePoint 문서 검색
+description: SharePoint에 등록된 문서를 Copilot Studio에서 검색하고 활용하기 위한 설정 방법을 안내합니다.
+---
+
 # SharePoint 에 등록된 문서를 Copilot 에서 검색하기
 
 SharePoint에 등록된 문서를 Copilot Studio에서 검색하고 활용하기 위한 설정 방법을 안내합니다.

@@ -1,19 +1,44 @@
-# CopilotStudio
-코파일럿 스튜디오에 대한 전반적인 설명
+# Copilot Studio 가이드 문서
 
-## 준비
+Copilot Studio를 이용한 AI 에이전트 구축 및 운영을 위한 종합 가이드입니다.
 
-https://copilotstudio.microsoft.com 
+## 시작하기
 
-## 참고
+이 문서는 Docusaurus를 사용하여 구축되었습니다.
 
-[Copilot Studio의 새로운 기능](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/whats-new)
+### 설치
 
-[Copilot Studio 릴리즈 플래너](https://releaseplans.microsoft.com/en-US/?app=Microsoft+Copilot+Studio): 기능 릴리즈 플래너
+```bash
+npm install
+```
 
-[Open AI Tokenizer](https://platform.openai.com/tokenizer): 토큰 수 계산
+### 로컬 개발 서버
 
-## 가이드 문서
+```bash
+npm start
+```
+
+브라우저에서 `http://localhost:3000`이 자동으로 열립니다. 대부분의 변경사항은 서버를 재시작하지 않고도 실시간으로 반영됩니다.
+
+### 빌드
+
+```bash
+npm run build
+```
+
+이 명령어는 정적 콘텐츠를 `build` 디렉터리에 생성합니다. 정적 호스팅 서비스를 사용하여 배포할 수 있습니다.
+
+## 문서 구조
+
+- `docs/` - 메인 가이드 문서
+  - SharePoint 통합 (문서 검색 및 목록 조회)
+  - Azure AI Search 벡터 검색
+  - Application Insights 모니터링
+  - Go-Live 체크리스트
+- `docs/go-live/` - 프로덕션 배포 가이드 (10단계)
+- `static/` - 정적 파일 (이미지, 파일 등)
+
+## 주요 가이드
 
 | 제목 | 설명 |
 | --- | --- |
@@ -22,20 +47,24 @@ https://copilotstudio.microsoft.com
 | [Azure AI Search](docs/azure-ai-search.md) | Azure AI Search를 이용한 벡터 검색 구성 방법 |
 | [모니터링 설정](docs/monitoring-application-insights.md) | Application Insights를 통한 대화 이력 추적 및 모니터링 |
 | [**Go-Live 고려 사항**](docs/go-live-considerations.md) | **프로덕션 배포 전 평가 항목 및 Best Practices (10단계 가이드)** |
-
-
-
-## SharePoint 에 등록된 문서를 Copilot 에서 검색 하기 위한 절차
-
-1. Copilot Studio 에 접속 하여 `만들기` 를 통해 `신규 Copilot` 선택
 ![](images/2024-06-26-17-48-48.png)
 
 2. 이름을 지정하고 `만들기` 버튼 클릭
 ![](images/2024-06-26-17-52-17.png)
-- 언어 설정을 한국어로 설정하는 경우 `클래식`모드로 동작하므로 생성형 AI 의 응답방식은 사용자가 `토픽`에 입력한 예시문을 바탕으로 `토픽`과 `작업`을 선택.
-- 영어로 설정하면 생성형 AI 의 `생성형(프리뷰)`기능이 활성화 되고 `토픽`과 `작업`에 대해 요약(Description) 을 LLM 이 판단하여 선택하는 차이가 있음.
 
-3. 예제 파일인 [풍력발전_오해와_진실.pdf](files/풍력발전_오해와_진실.pdf) 문서 내용중 
+## 참고 자료
+
+- [Copilot Studio](https://copilotstudio.microsoft.com)
+- [Microsoft Learn - Copilot Studio](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/)
+- [Copilot Studio의 새로운 기능](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/whats-new)
+- [Copilot Studio 릴리즈 플래너](https://releaseplans.microsoft.com/en-US/?app=Microsoft+Copilot+Studio)
+- [Open AI Tokenizer](https://platform.openai.com/tokenizer)
+- [Docusaurus 문서](https://docusaurus.io/)
+
+## 라이선스
+
+이 프로젝트는 오픈소스이며 자유롭게 사용할 수 있습니다.
+ 
 첫 페이지의 `풍력발전의 역사`에 대해 문서를 업로드 하기전 상태에서 코파일럿에게 질문
 
     **질문: 풍력발전기로 한 해 동안 몇 가구에 전기를 공급할 수 있어?**

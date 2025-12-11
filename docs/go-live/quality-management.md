@@ -1,8 +1,12 @@
+---
+sidebar_position: 2
+title: 2. 품질 관리
+description: 응답 품질 테스트, 사용자 경험 설계, 오류 처리 및 에스컬레이션 전략을 안내합니다.
+---
+
 # 2. 품질 관리
 
 > **Go-Live 고려 사항** > 품질 관리
-
----
 
 ## 📋 목차
 
@@ -703,13 +707,13 @@ actions:
 
 품질 관리 기준을 수립했다면, 다음은 보안 및 규정 준수를 검토하세요:
 
-➡️ **다음**: [보안 및 규정 준수](03-security-compliance.md) - 데이터 보안 및 컴플라이언스
+➡️ **다음**: [보안 및 규정 준수](security-compliance.md) - 데이터 보안 및 컴플라이언스
 
 ---
 
 ## 네비게이션
 
-| [← 이전: 목표 정의](01-goal-definition.md) | [📚 목차로](../go-live-considerations.md) | [다음: 보안 및 규정 준수 →](03-security-compliance.md) |
+| [← 이전: 목표 정의](goal-definition.md) | [📚 목차로](../go-live-considerations.md) | [다음: 보안 및 규정 준수 →](security-compliance.md) |
 |---|---|---|
 
 ---

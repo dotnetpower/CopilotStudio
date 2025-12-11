@@ -1,61 +1,65 @@
+---
+sidebar_position: 5
+title: Go-Live 고려 사항
+description: Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려해야 할 평가 항목 작성 가이드 및 Best Practices를 안내합니다.
+---
+
 # Go-Live 고려 사항
 
 Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려해야 할 평가 항목 작성 가이드 및 Best Practices를 안내합니다.
 
----
-
 ## 📑 목차
 
 ### 📋 계획 단계
-1. [**목표 정의 및 범위 설정**](go-live/01-goal-definition.md)
+1. [**목표 정의 및 범위 설정**](go-live/goal-definition.md)
    - 비즈니스 목표 설정
    - 성공 지표 (KPI) 정의
    - 범위 및 제약사항 명확화
 
-2. [**품질 관리**](go-live/02-quality-management.md)
+2. [**품질 관리**](go-live/quality-management.md)
    - 응답 품질 테스트
    - 사용자 경험 설계 (CUX)
    - 오류 처리 및 에스컬레이션
 
-3. [**보안 및 규정 준수**](go-live/03-security-compliance.md)
+3. [**보안 및 규정 준수**](go-live/security-compliance.md)
    - 데이터 보안 및 인증
    - 개인정보 보호 (GDPR, CCPA)
    - 감사 로그 및 컴플라이언스
 
 ### ⚙️ 기술 준비
-4. [**성능 및 확장성**](go-live/04-performance-scalability.md)
+4. [**성능 및 확장성**](go-live/performance-scalability.md)
    - 성능 최적화 전략
    - 부하 테스트
    - 용량 계획 및 비용 최적화
 
-5. [**모니터링 및 유지보수**](go-live/05-monitoring-maintenance.md)
+5. [**모니터링 및 유지보수**](go-live/monitoring-maintenance.md)
    - 실시간 모니터링 설정
    - 알림 및 대시보드 구성
    - 지속적인 개선 프로세스
 
-6. [**지식 관리**](go-live/06-knowledge-management.md)
+6. [**지식 관리**](go-live/knowledge-management.md)
    - 지식베이스 품질 관리
    - 문서 구조화 및 검색 최적화
    - 학습 및 성능 튜닝
 
 ### 🧪 테스트 및 검증
-7. [**테스트 계획**](go-live/07-testing-plan.md)
+7. [**테스트 계획**](go-live/testing-plan.md)
    - 기능/통합/부하/보안 테스트
    - 테스트 시나리오 및 케이스
    - 사용자 시나리오 기반 테스트
 
 ### 🚀 배포 준비
-8. [**배포 전 체크리스트**](go-live/08-deployment-checklist.md)
+8. [**배포 전 체크리스트**](go-live/deployment-checklist.md)
    - 기술적 준비사항
    - 비즈니스 준비사항
    - 운영 준비사항
 
-9. [**롤백 계획**](go-live/09-rollback-plan.md)
+9. [**롤백 계획**](go-live/rollback-plan.md)
    - 롤백 시나리오 정의
    - 롤백 절차 및 스크립트
    - 사후 검증
 
-10. [**문서화**](go-live/10-documentation.md)
+10. [**문서화**](go-live/documentation.md)
     - 필수 문서 목록
     - 문서 관리 정책
     - 버전 관리 및 업데이트
@@ -77,24 +81,24 @@ Copilot Studio 에이전트를 프로덕션 환경에 배포하기 전에 고려
 프로덕션 배포를 준비 중이라면 다음 순서로 진행하세요:
 
 ### 1️⃣ 계획 단계 (1-3주)
-- [목표 정의](go-live/01-goal-definition.md)부터 시작
-- [보안 및 규정 준수](go-live/03-security-compliance.md) 요구사항 파악
-- [품질 관리](go-live/02-quality-management.md) 기준 설정
+- [목표 정의](go-live/goal-definition.md)부터 시작
+- [보안 및 규정 준수](go-live/security-compliance.md) 요구사항 파악
+- [품질 관리](go-live/quality-management.md) 기준 설정
 
 ### 2️⃣ 기술 준비 (2-4주)
-- [성능 및 확장성](go-live/04-performance-scalability.md) 계획 수립
-- [모니터링](go-live/05-monitoring-maintenance.md) 인프라 구축
-- [지식 관리](go-live/06-knowledge-management.md) 시스템 구성
+- [성능 및 확장성](go-live/performance-scalability.md) 계획 수립
+- [모니터링](go-live/monitoring-maintenance.md) 인프라 구축
+- [지식 관리](go-live/knowledge-management.md) 시스템 구성
 
 ### 3️⃣ 테스트 (1-2주)
-- [테스트 계획](go-live/07-testing-plan.md) 실행
+- [테스트 계획](go-live/testing-plan.md) 실행
 - 품질 관리 기준 충족 확인
 - 사용자 시나리오 기반 검증
 
 ### 4️⃣ 배포 (1주)
-- [배포 전 체크리스트](go-live/08-deployment-checklist.md) 검증
-- [롤백 계획](go-live/09-rollback-plan.md) 준비 완료
-- [문서화](go-live/10-documentation.md) 최종 점검
+- [배포 전 체크리스트](go-live/deployment-checklist.md) 검증
+- [롤백 계획](go-live/rollback-plan.md) 준비 완료
+- [문서화](go-live/documentation.md) 최종 점검
 
 ---
 

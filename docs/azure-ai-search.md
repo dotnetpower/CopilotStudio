@@ -1,11 +1,16 @@
+---
+sidebar_position: 3
+title: Azure AI Search 벡터 검색
+description: Azure AI Search와 Storage Account를 사용하여 Copilot Studio에서 벡터 검색을 구현하는 방법을 안내합니다.
+---
+
 # Azure AI Search를 이용한 벡터 검색
 
 Azure AI Search 와 Storage Account를 사용한 벡터 검색 방법을 안내합니다.
 
-![](../images/2024-12-13-09-40-21.png)
-출처: [Azure AI Search의 벡터](https://learn.microsoft.com/ko-kr/azure/search/vector-search-overview)
+![Azure AI Search 벡터 검색 아키텍처](../images/2024-12-13-09-40-21.png)
 
----
+출처: [Azure AI Search의 벡터](https://learn.microsoft.com/ko-kr/azure/search/vector-search-overview)
 
 ## 벡터 검색을 위해 필요한 사항
 - Azure OpenAI

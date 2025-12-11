@@ -1,8 +1,12 @@
+---
+sidebar_position: 3
+title: 3. 보안 및 규정 준수
+description: 데이터 보안, 인증, 개인정보 보호, 감사 로그 및 컴플라이언스 요구사항을 안내합니다.
+---
+
 # 3. 보안 및 규정 준수
 
 > **Go-Live 고려 사항** > 보안 및 규정 준수
-
----
 
 ## 📋 목차
 
@@ -270,13 +274,13 @@ AuditLogs
 
 보안 및 컴플라이언스 요구사항을 충족했다면, 성능 및 확장성 계획을 수립하세요:
 
-➡️ **다음**: [성능 및 확장성](04-performance-scalability.md) - 성능 최적화 및 용량 계획
+➡️ **다음**: [성능 및 확장성](performance-scalability.md) - 성능 최적화 및 용량 계획
 
 ---
 
 ## 네비게이션
 
-| [← 이전: 품질 관리](02-quality-management.md) | [📚 목차로](../go-live-considerations.md) | [다음: 성능 및 확장성 →](04-performance-scalability.md) |
+| [← 이전: 품질 관리](quality-management.md) | [📚 목차로](../go-live-considerations.md) | [다음: 성능 및 확장성 →](performance-scalability.md) |
 |---|---|---|
 
 ---

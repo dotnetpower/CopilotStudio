@@ -1,10 +1,14 @@
+---
+sidebar_position: 2
+title: SharePoint 목록 조회
+description: Power Automate 또는 Dataverse Table을 이용하여 SharePoint 목록을 Copilot Studio에서 조회하는 방법을 안내합니다.
+---
+
 # SharePoint 목록 조회하기
 
 SharePoint 목록은 Copilot Studio의 기본 동작으로는 조회되지 않습니다. 이 가이드에서는 두 가지 방법을 소개합니다:
 1. Power Automate를 이용한 방법
 2. Dataverse Table을 이용한 방법
-
----
 
 ## 방법 1: Power Automate 이용
 
