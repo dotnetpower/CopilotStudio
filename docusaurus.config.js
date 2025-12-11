@@ -88,11 +88,11 @@ const config = {
             items: [
               {
                 label: '가이드',
-                to: '/docs/sharepoint-document-search',
+                to: '/sharepoint-document-search',
               },
               {
                 label: 'Go-Live 체크리스트',
-                to: '/docs/go-live-considerations',
+                to: '/go-live-considerations',
               },
             ],
           },
